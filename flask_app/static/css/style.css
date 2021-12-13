@@ -1,0 +1,34 @@
+.container {
+    margin-top: 50px;
+}
+
+.nav-pills > a, .nav-pills > h2 {
+    margin: auto 10px;
+}
+
+.success {
+    margin-top: 15px;
+}
+
+.form-label {
+    margin-bottom: 0;
+}
+
+.cont-inline {
+    display: flex;
+}
+
+.name-td {
+    flex: 1;
+    width: 33.33%;
+}
+
+.under-30-td {
+    flex: 1;
+    width: 33.33%;
+}
+
+.links-td {
+    flex: 1;
+    width: 33.33%;
+}
