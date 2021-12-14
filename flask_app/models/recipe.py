@@ -21,7 +21,7 @@ class Recipe:
 
     @classmethod
     def get_by_id(cls, data):
-        query = "SELECT * FROM recipes WHERE users.id = %(id)s;"
+        query = "SELECT * FROM recipes WHERE recipes.id = %(id)s;"
         recipe = connectToMySQL('recipes').query_db(query, data)
         if recipe:
             return cls(recipe[0])
@@ -35,3 +35,15 @@ class Recipe:
         for recipe in recipes_in_db:
             recipes_cls.append(cls(recipe))
         return recipes_cls
+
+    @classmethod
+    def delete(cls, data):
+        query = "DELETE FROM recipes WHERE recipes.id = %(id)s"
+        result = connectToMySQL('recipes').query_db(query, data)
+        return result
+
+    @classmethod
+    def edit(cls, data):
+        query = "UPDATE recipes SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, made_on = %(made_on)s, is_under_30 = %(is_under_30)s  WHERE id = %(id)s;"
+        result = connectToMySQL('recipes').query_db(query, data)
+        return result

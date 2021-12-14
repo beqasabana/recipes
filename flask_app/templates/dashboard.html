@@ -40,10 +40,11 @@
                         {% if recipe.is_under_30 == 1 %}
                             <td class="under-30-td">Yes</td>
                         {% endif %}
-                        <td class="links-td"><a href="">View Instructions</a>
+                        <td class="links-td">
+                            <a href="/one/recipe/{{ recipe.id }}">View Instructions</a>
                             {% if recipe.user_id == active_user.id %}
-                                <a href="">Edit</a>
-                                <a href="">Delete</a>
+                                <a href="/edit/{{ recipe.id }}">Edit</a>
+                                <a href="/delete/{{ recipe.id }}">Delete</a>
                             {% endif %}
                         </td>
                     </tr>
